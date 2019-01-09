@@ -1,46 +1,124 @@
-body {
-
-	padding: 50px;
-	font-family: sans-serif;
-	background: linear-gradient(to right, #F93D66, #6D47D9);
-	align-content: center;
-	justify-content: center;
+.body {
+	width: 100vw;
+	height: 100vh;
 }
-
-img {
-  width: 15%;
-  height: 100vh;
-}
-
-img:hover {
-opacity:0.7;
-}
-
-@media screen and (max-width:360px) {
-img {
-  min-width:60%;
-
-}
-
 .gallery {
-  width:100vw;
-}
+	display: flex;
+	align-content: stretch;
+	align-items:stretch;
 
-.expand {
-  width: 20%;
-  transition:5s ease-out;
 
-}
-}
-
-    .gallery{
-    display:flex;
-    justify-content: center;
-    }
-
-.expand {
-  width: 70%;
-  transition:5s ease-out;
 
 }
-/*changed
+
+.panel {
+	display:flex;
+	align-items:center;
+	justify-content: center;
+	background-size:1000px;
+	width: 400px;
+	height: 100vh;
+	background-position: center;
+
+
+}
+
+.panel.animation-open {
+	animation-name: panelopen;
+	 animation-duration: 0.9s;
+	 animation-fill-mode: forwards;
+}
+
+.panel.animation-close {
+	animation-name: panelclose;
+	 animation-duration: 0.9s;
+	 animation-fill-mode: forwards;
+}
+
+
+.text.animation-open {
+	font-size: 40px;
+	color:white;
+	bottom:50%;
+	text-align: center;
+	animation-name: panelopen;
+	 animation-duration: 0.9s;
+}
+
+.text.animation-close {
+	animation-name: panelclose;
+	 animation-duration: 0.9s;
+}
+
+
+
+.hidden-text {
+	color:white;
+	opacity: 0.01;
+	bottom:1px;
+	font-size:30px;
+
+}
+
+.hiddentext-show {
+	opacity: 1;
+	color:white;
+	position: absolute;
+	font-size:130px;
+	bottom:40px;
+	/* transition: all 0.5s; */
+}
+/* .expand {
+	animation-name: slideinout;
+  animation-duration: 3s;
+
+} */
+@keyframes panelopen {
+	0% {font-size:40px}
+  25% {width: 300px;background-size:1100px;}
+  100% {width: 700px;background-size:1100px;font-size:130px }
+}
+
+@keyframes panelclose {
+  0% {width: 700px; background-size:1100px; font-size:130px}
+	15% {width: 800px;}
+  100% {width: 400px;background-size:1000px; font-size:40px}
+}
+
+
+
+.panel:hover {
+	opacity: 0.5;
+}
+
+
+@media screen and (max-width:500px) {
+	.panel {
+	width: 150px;
+	}
+
+	.expand {
+		width: 250px;
+		transition:1s ease-out;
+	}
+
+.hiddentext-show {
+	font-size:50px;
+}
+
+	.text {
+		font-size: 20px;
+
+	}
+	.text-click {
+		font-size:50px;
+		transition: 1s;
+	}
+
+}
+
+.panel-1 { background-image: url(https://source.unsplash.com/gYl-UtwNg_I/1500x1500);}
+.panel-2 { background-image: url(https://source.unsplash.com/rFKUFzjPYiQ/1500x1500);}
+.panel-3 { background-image: url(https://images.unsplash.com/photo-1465188162913-8fb5709d6d57?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&cs=tinysrgb&w=1500&h=1500&fit=crop&s=967e8a713a4e395260793fc8c802901d);}
+.panel-4 { background-image: url(https://source.unsplash.com/ITjiVXcwVng/1500x1500);}
+.panel-5 { background-image: url(https://source.unsplash.com/3MNzGlQM7qs/1500x1500);}
